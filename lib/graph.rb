@@ -1,6 +1,7 @@
 class Graph 
   attr_reader :graph_nodes
-  def initialize
+
+  def initialize(graph_data:)
     @graph_nodes = {}
   end
 

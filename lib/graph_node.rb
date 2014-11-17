@@ -1,9 +1,9 @@
 class GraphNode
   attr_reader :node_name, :estimated_cost_to_goal
 
-  def initialize(node_name:, estimated_cost_to_goal:)
-  @node_name = node_name
-  @estimated_cost_to_goal = estimated_cost_to_goal 
+  def initialize(node_name:, estimated_cost_to_goal: 0)
+    @node_name = node_name
+    @estimated_cost_to_goal = estimated_cost_to_goal 
   end
 
   private
