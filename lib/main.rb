@@ -1,6 +1,6 @@
 require_relative 'graph_builder'
 
-FILE_PATH = "#{File.dirname(__FILE__)}/../data/inputs/1.txt"
+FILE_PATH = "#{File.dirname(__FILE__)}/../data/inputs/a_star_graph.txt"
 graph_data = File.read(FILE_PATH).split
 
 edge_data = graph_data.slice(3, graph_data.size - 1)
