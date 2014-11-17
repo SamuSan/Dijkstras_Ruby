@@ -1,20 +1,26 @@
+require_relative 'graph_node'
+require_relative 'graph_edge'
+
 class GraphBuilder
-  def initialize(graph_data)
-    @number_of_nodes = graph_data[0]
-    @origin_node = graph_data[1]
-    @destination_node = graph_data[2]
-    puts "Number of nodes #{@number_of_nodes} "
-    puts "Origin node : #{@origin_node}"
-    puts "Destination node : #{@destination_node}"
+  def initialize(number_of_nodes:, edge_data:)
+    @graph_edges = []
+    @number_of_nodes = number_of_nodes.to_i
+    @graph_nodes = Array.new(number_of_nodes).fill(GraphNode.new)
+
+    build_edges(edge_data)
   end
+
+  private 
 
   def build_graph
     
   end
 
-  def to_s
-    puts "Number of nodes #{@number_of_nodes} "
-    puts "Origin node : #{@origin_node}"
-    puts "Destination node : #{@destination_node}"
+  def build_edges(edge_data)
+    edge_data.each_slice(2) { |slice| create_graph_edge(slice)}
   end
-end 
+
+  def create_graph_edge(from_to_nodes)
+    @graph_edges.push(GraphEdge.new(from_to_nodes[0], from_to_nodes[1]))
+  end
+end   
