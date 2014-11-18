@@ -4,10 +4,10 @@ class GraphNode
   def initialize(node_name:, estimated_cost_to_goal: 0)
     @node_name = node_name
     @estimated_cost_to_goal = estimated_cost_to_goal 
+    @neighbouring_nodes = []
   end
 
-  private
-
-  def populate_neighbouring_nodes(neighbouring_nodes)
+  def add_neighbour_nodes(neighbours)
+    @neighbouring_nodes << neighbours
   end
 end
